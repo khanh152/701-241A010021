@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ - Đề Thi Kết Thúc Học Phần Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            <img src="images/avatar.jpg" alt="Avatar sinh viên" class="avatar" onerror="this.src='https://via.placeholder.com/70';">
+            <div>
+                <h2>Đoàn Duy Khánh</h2>
+                <p>MSSV: 241A010021 | Lớp: 261INT440701</p>
+                <p>Ngành: Mạng Máy Tính Và Truyền Thông</p>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html" class="active">Trang Chủ</a></li>
+                <li><a href="lythuyet.html">a) Trả Lời Lý Thuyết</a></li>
+                <li><a href="baitap23.html">b) Bài Tập 23 (Đèn Kéo Quân)</a></li>
+                <li><a href="baitap22.html">c) Bài Tập 22 (Kết Quả Trắc Nghiệm)</a></li>
+                <li><a href="diemdanhl.html">d) Thông Tin Điểm Danh</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Chào mừng đến với Website Đề Thi Kết Thúc Học Phần</h1>
+        <p>Trang web tổng hợp các bài tập thực hành JavaScript, CSS nâng cao và phần trả lời lý thuyết chi tiết theo Đề số 1.</p>
+        
+        <div class="grid-container">
+            <!-- Bài tập 1: Danh sách & Tìm kiếm sản phẩm -->
+            <div class="card">
+                <h3>Phần Thực Hành 1: Tìm Kiếm Sản Phẩm</h3>
+                <p>Tìm kiếm sản phẩm động từ mảng JavaScript có bảo mật chống injection.</p>
+                <div style="margin: 15px 0;">
+                    <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm..." style="padding: 8px; width: 70%; border: 1px solid #ccc; border-radius: 4px;">
+                    <button onclick="searchProduct()" class="btn" style="margin-top: 0;">Tìm</button>
+                </div>
+                <div id="errorMessage" style="color: red; font-weight: bold; margin-bottom: 10px;"></div>
+                <div id="productList" style="display: grid; gap: 10px; margin-top: 10px;"></div>
+            </div>
+
+            <!-- Bài tập 2: Form Đăng Ký -->
+            <div class="card">
+                <h3>Phần Thực Hành 2: Form Đăng Ký</h3>
+                <form onsubmit="validateAndSave(event)" style="display: flex; flex-direction: column; gap: 10px; text-align: left; max-width: 400px; margin: 0 auto;">
+                    <label>Họ và tên: <input type="text" id="fullname" required style="width: 100%; padding: 8px;"></label>
+                    <label>Email: <input type="email" id="email" required style="width: 100%; padding: 8px;"></label>
+                    <label>Mật khẩu: <input type="password" id="password" required style="width: 100%; padding: 8px;"></label>
+                    <small style="color: #666;">(Mật khẩu từ 8 ký tự, gồm chữ hoa, chữ thường & số)</small>
+                    <label><input type="checkbox" required> Đồng ý điều khoản</label>
+                    <button type="submit" class="btn">Đăng Ký</button>
+                </form>
+                <div id="formStatus" style="margin-top: 10px;"></div>
+            </div>
+
+            <!-- Bài tập 3: Đồng hồ đếm ngược -->
+            <div class="card">
+                <h3>Phần Thực Hành 3: Đồng Hồ Đếm Ngược</h3>
+                <p>Đếm ngược thời gian 10 phút làm bài (Cập nhật thời gian thực & cảnh báo).</p>
+                <div id="timerDisplay" style="font-size: 2.5rem; font-weight: bold; color: #e74c3c; margin: 15px 0;">10:00</div>
+                <button onclick="startTimer()" class="btn">Bắt Đầu Bấm Giờ</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Đoàn Duy Khánh - MSSV: 241A010021 - Đề Thi Kết Thúc Học Phần Web</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

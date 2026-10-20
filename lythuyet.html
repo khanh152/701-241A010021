@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a) Báo Cáo Lý Thuyết Chi Tiết - Đề 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ĐỒNG BỘ PHÔNG CHỮ TIMES NEW ROMAN TOÀN TRANG LÝ THUYẾT */
+        .theory-container {
+            font-family: 'Times New Roman', Times, serif !important;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #111111;
+        }
+
+        .theory-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            border-top: 5px solid #3498db;
+        }
+        .theory-card.q1 { border-top-color: #3498db; }
+        .theory-card.q2 { border-top-color: #2ecc71; }
+        .theory-card.q3 { border-top-color: #e74c3c; }
+        .theory-card.q4 { border-top-color: #f39c12; }
+
+        .tag-score {
+            display: inline-block;
+            background: #e8f4fd;
+            color: #1a5276;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .theory-container h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a252f;
+            margin-bottom: 8px;
+        }
+
+        .theory-container h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 15px 0 10px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 6px;
+        }
+
+        .theory-container h3 {
+            font-size: 17px;
+            font-weight: bold;
+            color: #34495e;
+            margin: 12px 0 6px 0;
+        }
+
+        .theory-container p, .theory-container li {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        /* Giữ phông mã nguồn cho khối code để dễ đọc nhưng đồng bộ kích thước */
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 18px;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+            margin: 15px 0;
+            border-left: 4px solid #007acc;
+            white-space: pre-wrap;
+        }
+
+        .highlight-box {
+            background: #fffdf0;
+            border-left: 4px solid #f1c40f;
+            padding: 14px 18px;
+            margin: 15px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 16px;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+        .custom-table th, .custom-table td {
+            border: 1px solid #cccccc;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .custom-table th {
+            background-color: #f2f4f4;
+            color: #111111;
+            font-weight: bold;
+        }
+
+        /* Đồng bộ thẻ code inline không bị to nhỏ bất thường */
+        .theory-container code {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 16px;
+            color: #c0392b;
+        }
+        .code-block code {
+            font-family: 'Consolas', 'Courier New', monospace !important;
+            font-weight: normal;
+            font-size: 14px;
+            color: #d4d4d4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            <img src="images/avatar.jpg" alt="Avatar" class="avatar" onerror="this.src='https://via.placeholder.com/70';">
+            <div>
+                <h2>Đoàn Duy Khánh</h2>
+                <p>MSSV: 241A010021 | Lớp: 261INT440701</p>
+                <p>Ngành: Mạng Máy Tính Và Truyền Thông</p>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="lythuyet.html" class="active">a) Trả Lời Lý Thuyết</a></li>
+                <li><a href="baitap23.html">b) Bài Tập 23 (Đèn Kéo Quân)</a></li>
+                <li><a href="baitap22.html">c) Bài Tập 22 (Kết Quả Trắc Nghiệm)</a></li>
+                <li><a href="diemdanhl.html">d) Thông Tin Điểm Danh</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container theory-container">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h1>BÁO CÁO PHÂN TÍCH TƯ DUY LÝ THUYẾT</h1>
+            <p style="color: #555555; font-size: 17px;">Đề Số 1 - Học phần: Lập Trình Web (Tổng điểm: 40 điểm)</p>
+        </div>
+
+        <!-- CÂU 1 -->
+        <article class="theory-card q1">
+            <span class="tag-score">Câu 1 - 10 Điểm</span>
+            <h2>Phân Tích Chi Tiết position: relative vs position: absolute</h2>
+            
+            <h3>1. Sự khác biệt bản chất trong Luồng Tài Liệu (Document Flow):</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>position: relative:</strong> Phần tử vẫn giữ nguyên vị trí ban đầu trong luồng tài liệu chuẩn. Khi điều chỉnh top, left, right, bottom, phần tử sẽ di chuyển tương đối so với vị trí gốc của nó nhưng <strong>không làm thay đổi hay xô lệch các phần tử xung quanh</strong>.</li>
+                <li><strong>position: absolute:</strong> Phần tử hoàn toàn <strong>bị tách khỏi luồng tài liệu chuẩn</strong> (được coi như không tồn tại đối với các phần tử khác). Vị trí của nó được tính dựa trên phần tử cha gần nhất có position khác static.</li>
+            </ul>
+
+            <h3>2. Ví dụ ứng dụng Responsive Layout (Thẻ thông báo Badge trên Nút bấm):</h3>
+            <pre class="code-block"><code>/* CSS Layout Responsive */
+.btn-wrapper {
+    position: relative; /* Làm mốc tọa độ cho thẻ con */
+    display: inline-block;
+}
+
+.notification-badge {
+    position: absolute; /* Tách khỏi luồng, ghim vào góc trên bên phải */
+    top: -8px;
+    right: -8px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+}</code></pre>
+
+            <div class="highlight-box">
+                <strong>Thảo luận về Deploy Hosting & Độ tương thích thiết bị:</strong><br>
+                Khi website deploy lên hosting để hoạt động thực tế trên đa dạng thiết bị (Mobile, Tablet, Desktop), nếu lạm dụng position: absolute với đơn vị cố định (px) sẽ khiến giao diện bị vỡ (layout overflow). Giải pháp tối ưu responsive là luôn bao bọc phần tử absolute trong thẻ chứa relative kết hợp với Media Queries và đơn vị tương đối.
+            </div>
+        </article>
+
+        <!-- CÂU 2 -->
+        <article class="theory-card q2">
+            <span class="tag-score">Câu 2 - 10 Điểm</span>
+            <h2>Quy Trình Đăng Ký Domain, Cấu Hình Hosting & An Ninh Mạng</h2>
+            
+            <h3>1. Quy trình 3 bước triển khai Website đơn giản:</h3>
+            <ol style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Đăng ký Domain (Tên miền):</strong> Lựa chọn tên miền từ nhà cung cấp (Namecheap, GoDaddy, PA Việt Nam).</li>
+                <li><strong>Khởi tạo Hosting:</strong> Cấu hình dịch vụ lưu trữ để đăng tải các tệp tin website.</li>
+                <li><strong>Trỏ Domain về Hosting:</strong> Thiết lập bản ghi A Record hoặc cập nhật Nameservers.</li>
+            </ol>
+
+            <h3>2. Vai trò của hệ thống phân giải tên miền DNS:</h3>
+            <p>DNS đóng vai trò như một "danh bạ Internet", chuyển đổi tên miền dạng chữ (ví dụ: khanh152.github.io) thành địa chỉ IP dạng số để máy tính thiết lập kết nối.</p>
+
+            <h3>3. Đề xuất 2 nền tảng Serverless Deployment:</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>GitHub Pages:</strong> Miễn phí, triển khai trực tiếp từ kho lưu trữ Git, tích hợp sẵn SSL.</li>
+                <li><strong>Netlify:</strong> Hỗ trợ kéo-thả và tự động build dự án khi nhận code mới.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Rủi ro bảo mật do cấu hình sai:</strong><br>
+                Nếu thiếu chứng chỉ <strong>HTTPS (SSL/TLS)</strong>, luồng dữ liệu truyền giữa trình duyệt và máy chủ sẽ ở dạng văn bản thô, dễ bị tấn công đánh cắp thông tin (Man-In-The-Middle).
+            </div>
+        </article>
+
+        <!-- CÂU 3 -->
+        <article class="theory-card q3">
+            <span class="tag-score">Câu 3 - 10 Điểm</span>
+            <h2>So Sánh let, const, var & Kỹ Thuật Debug</h2>
+
+            <h3>1. Bảng so sánh toàn diện Scope và Hoisting:</h3>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Tiêu chí</th>
+                        <th>var (ES5)</th>
+                        <th>let (ES6)</th>
+                        <th>const (ES6)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Phạm vi (Scope)</strong></td>
+                        <td>Function Scope</td>
+                        <td>Block Scope {}</td>
+                        <td>Block Scope {}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hoisting</strong></td>
+                        <td>Có (gán giá trị undefined)</td>
+                        <td>Có (Temporal Dead Zone)</td>
+                        <td>Có (Temporal Dead Zone)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tái gán giá trị</strong></td>
+                        <td>Cho phép tái gán & khai báo lại</td>
+                        <td>Cho phép tái gán, không khai báo lại</td>
+                        <td>Không cho phép gán lại</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>2. Tình huống lỗi kinh điển do dùng var trong vòng lặp bất đồng bộ:</h3>
+            <pre class="code-block"><code>// LỖI: Dùng var khiến biến i bị đè trong cùng 1 Function Scope
+for (var i = 1; i <= 3; i++) {
+    setTimeout(function() {
+        console.log("Giá trị i: " + i); // Kết quả in ra: 4, 4, 4 (Sai kỳ vọng)
+    }, 1000);
+}
+
+// SỬA LỖI: Thay var bằng let (Block Scope giữ giá trị riêng cho mỗi vòng lặp)
+for (let j = 1; j <= 3; j++) {
+    setTimeout(function() {
+        console.log("Giá trị j: " + j); // Kết quả in ra đúng: 1, 2, 3
+    }, 1000);
+}</code></pre>
+
+            <h3>3. Quy trình Debug với Chrome DevTools:</h3>
+            <p>Nhấn <strong>F12</strong> chọn tab <strong>Sources</strong> $\rightarrow$ Chọn file script và click vào chỉ số dòng code để đặt <strong>Breakpoint</strong> $\rightarrow$ Quan sát biến tại bảng <strong>Scope</strong>.</p>
+        </article>
+
+        <!-- CÂU 4 -->
+        <article class="theory-card q4">
+            <span class="tag-score">Câu 4 - 10 Điểm</span>
+            <h2>Kỹ Thuật Event Delegation & Tối Ưu Hóa Hiệu Năng DOM</h2>
+
+            <h3>1. Bản chất của Event Delegation (Ủy quyền sự kiện):</h3>
+            <p>Dựa trên cơ chế <strong>Event Bubbling</strong> (sự kiện nổi bọt từ con lên cha). Thay vì gán nhiều listener cho từng thẻ con, ta chỉ gán <strong>duy nhất 1 listener ở thẻ cha</strong>.</p>
+
+            <h3>2. Minh họa ứng dụng xử lý danh sách động:</h3>
+            <pre class="code-block"><code>&lt;!-- Danh sách động chứa sản phẩm --&gt;
+&lt;ul id="productContainer"&gt;
+    &lt;li class="item"&gt;Sản phẩm 1&lt;/li&gt;
+    &lt;li class="item"&gt;Sản phẩm 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+// Chỉ gán 1 sự kiện duy nhất ở thẻ cha &lt;ul&gt;
+document.getElementById('productContainer').addEventListener('click', function(event) {
+    if (event.target &amp;&amp; event.target.matches('li.item')) {
+        console.log('Đã chọn:', event.target.innerText);
+    }
+});
+&lt;/script&gt;</code></pre>
+
+            <div class="highlight-box">
+                <strong>Lợi ích tối ưu hiệu năng Website:</strong>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Giảm thiểu bộ nhớ (RAM):</strong> Tránh việc khởi tạo quá nhiều Event Listeners.</li>
+                    <li><strong>Hỗ trợ phần tử sinh ra động:</strong> Các thẻ thêm mới tự động nhận sự kiện mà không cần gán lại.</li>
+                </ul>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Đoàn Duy Khánh - MSSV: 241A010021 - Đề Thi Kết Thúc Học Phần Web</p>
+    </footer>
+</body>
+</html>
